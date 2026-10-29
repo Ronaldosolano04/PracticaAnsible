@@ -1,0 +1,47 @@
+services:
+  server1:
+    image: ubuntu-ssh
+    container_name: server1
+    hostname: server1
+    networks:
+      redansible:
+        ipv4_address: 172.20.0.11
+
+  server2:
+    image: ubuntu-ssh
+    container_name: server2
+    hostname: server2
+    networks:
+      redansible:
+        ipv4_address: 172.20.0.12
+
+  server3:
+    image: ubuntu-ssh
+    container_name: server3
+    hostname: server3
+    networks:
+      redansible:
+        ipv4_address: 172.20.0.13
+
+  server4:
+    image: ubuntu-ssh
+    container_name: server4
+    hostname: server4
+    networks:
+      redansible:
+        ipv4_address: 172.20.0.14
+
+  server5:
+    image: ubuntu-ssh
+    container_name: server5
+    hostname: server5
+    networks:
+      redansible:
+        ipv4_address: 172.20.0.15
+
+networks:
+  redansible:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.20.0.0/24
